@@ -28,7 +28,7 @@ The cool thing about proxies and delegate call is that all our storage variables
 
 ## Issues with proxies
 
-1. Storage Clashes
+### 1. Storage Clashes
 
 When we do `delegateCall` from the proxyContract, we do the logic of implementationContract inside the proxyContract.
 
@@ -70,7 +70,8 @@ ProxyA delegates function calls to FacetA. The problem is that, when delegating,
 So, basically, you can only ever append variables to your implementation contract and not really change or re-order the old ones.
 
 Now,ideally if you called `setValue` using delegateCall from your proxy contract, it should set the value of `differentValue` but it sets the value 
-2. Function Selector Clashes
+
+### 2. Function Selector Clashes
  
  Function Selector: A 4 byte hash of a function name and function signature that define a function.
  
