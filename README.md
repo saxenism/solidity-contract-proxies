@@ -8,7 +8,9 @@ contract address.
 
 This is the truest form of upgrading your contracts, without compromising on the trustless (no onlyAdmin functions) and decentralisation facets of web3. However, as is amply clear pulling this type of an upgrade isn't really a breeze.
 
-# Proxy Terminologies
+# Proxies
+
+## Proxy Terminologies
 
 1. The Implementation Contract
 * Which has all our code of our protocol. When we upgrade, we launch a brand new implementation contract.
@@ -112,4 +114,6 @@ contract ProxyExperimentation {
     }
 }
 ```
+## Proxy Patterns
 
+### 1. Transparent Proxy Pattern
