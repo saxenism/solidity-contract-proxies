@@ -75,7 +75,7 @@ Now,ideally if you called `setValue` using delegateCall from your proxy contract
  
  Function Selector: A 4 byte hash of a function name and function signature that define a function.
  
- Now it is possible that a function in the implementation contract has the same function selector as an admin function in the proxy contract.
+ Now it is possible that a function in the implementation contract has the same function selector as an admin function in the proxy contract. Think of a scenario where `function getPrice` in the implementationContract has the same Function Selector as `function destroyProxy`. Definitely would not be good.
  
  For example, the following two functions have the exact same function selector
  ```
