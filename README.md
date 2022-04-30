@@ -117,3 +117,21 @@ contract ProxyExperimentation {
 ## Proxy Patterns
 
 ### 1. Transparent Proxy Pattern
+
+In this pattern, the admin can call only call the admin functions in the proxy contract and the users can only call the functions in the implementation contract. Admin functions are the functions that govern the upgrades.
+
+This way, as an admin or as a user you can't mix up functions from different contracts with the same function selector and no problems should occur.
+As a side note, now the admin cannot participate in their own DeFi protocol :P
+
+### 2. Universal Upgradable Proxies
+
+Admin Only functions are kept in the implementation contract itself, instead of the proxy. 
+
+The advantage here is, if that happens, and two functions have the same function selector, then the Solidity compiler will let us know.
+Also, since there is one less read that we have to do, we save on gas costs.
+
+So, it is necessary here that you implement the upgradation functions in the implementation contract, because otherwise you would be stuck and we get back to the YEET method
+
+### 3. Diamond Pattern
+
+Allows for multiple implementation contracts. Is probably the best method to implement upgradable contracts, since it allows you to make granular changes/upgrades, but it can get really complex. So to use this, you need to be really really good at smart contract development.
